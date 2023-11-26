@@ -140,6 +140,7 @@ do(State) ->
          Opts = rebar_app_info:opts(AppInfo),
          Dir = rebar_app_info:dir(AppInfo),
          OutDir = rebar_app_info:ebin_dir(AppInfo),
+         code:add_path(OutDir),
 
          DtlOpts1 = proplists:unfold(rebar_opts:get(Opts, erlydtl_opts, [])),
          lists:foreach(fun(DtlOpts) ->
